@@ -4,15 +4,19 @@ public class Jukebox {
 
     public void music(int position) {
         String lyrics;
-        if (position == 1) {
-            lyrics = "Пусть бегут неуклюже";
-            System.out.println(lyrics);
-        } else if (position == 2) {
-            lyrics = "Спокойной ночи";
-            System.out.println(lyrics);
-        } else {
-            lyrics = "Песня не найдена";
-            System.out.println(lyrics);
+        switch (position) {
+            case 1 -> {
+                lyrics = "Пусть бегут неуклюже";
+                System.out.println(lyrics);
+            }
+            case 2 -> {
+                lyrics = "Спокойной ночи";
+                System.out.println(lyrics);
+            }
+            default -> {
+                lyrics = "Песня не найдена";
+                System.out.println(lyrics);
+            }
         }
     }
 
