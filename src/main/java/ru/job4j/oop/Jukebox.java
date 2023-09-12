@@ -3,19 +3,15 @@ package ru.job4j.oop;
 public class Jukebox {
 
     public void music(int position) {
-        String lyrics;
         switch (position) {
             case 1 -> {
-                lyrics = "Пусть бегут неуклюже";
-                System.out.println(lyrics);
+                System.out.println("Пусть бегут неуклюже");
             }
             case 2 -> {
-                lyrics = "Спокойной ночи";
-                System.out.println(lyrics);
+                System.out.println("Спокойной ночи");
             }
             default -> {
-                lyrics = "Песня не найдена";
-                System.out.println(lyrics);
+                System.out.println("Песня не найдена");
             }
         }
     }
