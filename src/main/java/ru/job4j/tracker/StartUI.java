@@ -17,6 +17,16 @@ public class StartUI {
             } else {
                 run = false;
             }
+            if (select == 0) {
+                System.out.println("=== Создание новой заявки ===");
+                System.out.println("Введите имя: ");
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                tracker.add(item);
+                System.out.println("Добавленная заявка: " + item);
+            } else if (select == 6) {
+                run = false;
+            }
         }
     }
 
