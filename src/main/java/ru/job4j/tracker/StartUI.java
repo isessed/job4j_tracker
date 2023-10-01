@@ -10,7 +10,7 @@ public class StartUI {
         boolean run = true;
         while (run) {
             showMenu();
-            System.out.print("Select: ");
+            System.out.print("Выбрать: ");
             int select = Integer.parseInt(scanner.nextLine());
             if (select == 0) {
                 System.out.println("=== Создание новой заявки ===");
@@ -49,9 +49,9 @@ public class StartUI {
 
     private void showMenu() {
         String[] menu = {
-                "Add new Item", "Show all items", "Edit item",
-                "Delete item", "Find item by id", "Find items by name",
-                "Exit program"
+                "Добавить новую заявку", "Показать все заявки", "Изменить заявку",
+                "Удалить заявку", "Показать заявку по id", "Показать заявки по имени",
+                "Завершить программу"
         };
         System.out.println("Menu:");
         for (int i = 0; i < menu.length; i++) {
