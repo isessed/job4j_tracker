@@ -7,8 +7,8 @@ public class Fact {
         if (n < 0) {
             throw new IllegalArgumentException("N could not be less than 0");
         }
-        for (int i = 2; i <= n; i++) {
-            rsl *= i;
+        for (int index = 2; index <= n; index++) {
+            rsl *= index;
         }
         return rsl;
     }
