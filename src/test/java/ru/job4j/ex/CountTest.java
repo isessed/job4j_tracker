@@ -14,6 +14,6 @@ class CountTest {
                 () -> {
                     Count.add(10, 2);
                 });
-        assertThat(exception.getMessage()).isEqualTo("Start should be less than finish.");
+        assertThat(exception.getMessage()).isEqualTo("Start should be less than finish");
     }
 }
