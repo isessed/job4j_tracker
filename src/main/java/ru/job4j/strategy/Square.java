@@ -1,8 +1,7 @@
 package ru.job4j.strategy;
 
-public class Square implements Shape {
+public class Square {
 
-    @Override
     public String draw() {
         String ln = System.lineSeparator();
         return " _______ " + ln
