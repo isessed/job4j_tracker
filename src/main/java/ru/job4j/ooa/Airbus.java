@@ -23,7 +23,7 @@ public final class Airbus extends AirCraft {
     }
 
     public void printCountEngine() {
-        final int rsl = name.equals("A380") ? 4 : COUNT_ENGINE;
+        final int rsl = "A380".equals(name) ? 4 : COUNT_ENGINE;
         System.out.println("Количество двигателей равно: " + rsl);
     }
 
