@@ -56,22 +56,28 @@ public class AnalyzeByMap {
             }
             list.add(new Label(pupil.name(), score));
         }
-        list.sort(Comparator.naturalOrder());
-        return list.get(list.size() - 1);
+        int maxIndex = 0;
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i).compareTo(list.get(maxIndex)) > 0) {
+                maxIndex = i;
+            }
+        }
+        return list.get(maxIndex);
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
         Map<String, Integer> map = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                map.compute(subject.name(), (k, v) -> (v == null ? subject.score() : v + subject.score()));
+                int currentScore = map.getOrDefault(subject.name(), 0);
+                map.put(subject.name(), currentScore + subject.score());
             }
         }
-        List<Label> list = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            list.add(new Label(entry.getKey(), entry.getValue()));
+            if (entry.getValue() > Integer.MIN_VALUE) {
+                return new Label(entry.getKey(), entry.getValue());
+            }
         }
-        list.sort(Comparator.naturalOrder());
-        return list.get(list.size() - 1);
+        return null;
     }
 }
