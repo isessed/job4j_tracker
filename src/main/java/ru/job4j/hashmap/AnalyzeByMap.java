@@ -37,7 +37,8 @@ public class AnalyzeByMap {
         Map<String, Integer> map = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                map.compute(subject.name(), (k, v) -> (v == null ? subject.score() : v + subject.score()));
+                int currentScore = map.getOrDefault(subject.name(), 0);
+                map.put(subject.name(), currentScore + subject.score());
             }
         }
         List<Label> result = new ArrayList<>();
