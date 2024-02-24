@@ -33,9 +33,7 @@ public class FunctionalInterfaces {
         List<String> strings = new ArrayList<>(map.values());
         Consumer<String> consumer = (text) -> System.out.println(text);
         Function<String, String> function = (text) -> text.toUpperCase();
-        for (
-                String string : strings) {
-
+        for (String string : strings) {
             consumer.accept(function.apply(string));
         }
     }
