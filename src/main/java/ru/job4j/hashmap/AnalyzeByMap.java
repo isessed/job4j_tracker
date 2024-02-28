@@ -3,6 +3,7 @@ package ru.job4j.hashmap;
 import ru.job4j.oop.Student;
 
 import java.util.*;
+import java.util.function.BiFunction;
 
 public class AnalyzeByMap {
 
@@ -37,8 +38,8 @@ public class AnalyzeByMap {
         Map<String, Integer> map = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                int currentScore = map.getOrDefault(subject.name(), 0);
-                map.put(subject.name(), currentScore + subject.score());
+                BiFunction<Integer, Integer, Integer> function = Integer::sum;
+                map.merge(subject.name(), subject.score(), function);
             }
         }
         List<Label> result = new ArrayList<>();
@@ -70,8 +71,8 @@ public class AnalyzeByMap {
         Map<String, Integer> map = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                int currentScore = map.getOrDefault(subject.name(), 0);
-                map.put(subject.name(), currentScore + subject.score());
+                BiFunction<Integer, Integer, Integer> function = Integer::sum;
+                map.merge(subject.name(), subject.score(), function);
             }
         }
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
