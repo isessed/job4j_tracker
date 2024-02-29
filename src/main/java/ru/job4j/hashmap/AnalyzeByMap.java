@@ -38,8 +38,7 @@ public class AnalyzeByMap {
         Map<String, Integer> map = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                BiFunction<Integer, Integer, Integer> function = Integer::sum;
-                map.merge(subject.name(), subject.score(), function);
+                map.merge(subject.name(), subject.score(), Integer::sum);
             }
         }
         List<Label> result = new ArrayList<>();
@@ -71,8 +70,7 @@ public class AnalyzeByMap {
         Map<String, Integer> map = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                BiFunction<Integer, Integer, Integer> function = Integer::sum;
-                map.merge(subject.name(), subject.score(), function);
+                map.merge(subject.name(), subject.score(), Integer::sum);
             }
         }
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
