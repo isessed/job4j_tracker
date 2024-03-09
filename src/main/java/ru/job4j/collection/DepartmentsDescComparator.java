@@ -5,7 +5,9 @@ import java.util.Comparator;
 public class DepartmentsDescComparator implements Comparator<String> {
     @Override
     public int compare(String left, String right) {
-        return right.charAt(1) == left.charAt(1) ? left.compareTo(right)
-                : Integer.compare(right.charAt(1), left.charAt(1));
+        if (right.split("/")[0].compareTo(left.split("/")[0]) != 0) {
+            return right.split("/")[0].compareTo(left.split("/")[0]);
+        }
+        return left.compareTo(right);
     }
 }
